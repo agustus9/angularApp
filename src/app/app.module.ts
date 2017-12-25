@@ -7,7 +7,7 @@ import { SandboxComponent } from './components/sandbox/sandbox.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
     SandboxComponent
   ],
   imports: [
