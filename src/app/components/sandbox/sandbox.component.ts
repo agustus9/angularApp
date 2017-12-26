@@ -5,25 +5,22 @@ import { Component } from '@angular/core';
     selector:'sandbox',
     template:`
         <h1>Hello World</h1>
-        <!--
-        <!-- 3 ways to bind properties -->
-        <div><img src="{{ imageUrl }}"></div>
-        <div><img [src]="imageUrl"></div>
-        <div><img bind-src="imageUrl"></div>
-
-        <h4>Image Location:  <span [textContent]="imageUrl"></span></h4>
-        -->
+        <p>My birthday is {{ birthday | date | uppercase}}</p>
+        <p>My birthday is {{ birthday | date:"MM-dd-yyyy"}}</p>
+        <p>I was born in {{ birthday | date:"yyyy" }}</p>
+        <p>I love {{ 'cake' | uppercase}}</p>
+        <p>I hate {{ 'CATS' | lowercase}}</p>
+        <p>Your total is {{ total | currency}}</p>
+        <p>Your total is {{ total + fee }}</p>
+        <p>Our fee is {{ fee | percent }}</p>
         
-        <hr>
-        <h2>Create Post</h2>
-        <p [hidden]="isUnchanged">Post has been changed, please save</p>
-        <button [disabled]="isUnchanged">Save</button>
-    `
+        `
     
 })
 
 export class SandboxComponent{
-    imageUrl:string = 'http://lorempixel.com/400/200'; 
-    isUnchanged:boolean = true;
+    birthday = new Date(1981, 1, 15);
+    total = 500;
+    fee = 0.5;
 }
 
